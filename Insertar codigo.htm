@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Pista</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f9; }
+        .box { background: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; }
+        input { padding: 10px; font-size: 16px; width: 200px; text-align: center; margin-bottom: 10px; }
+        button { padding: 10px 20px; font-size: 16px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .oculto { display: none; }
+        .exito { color: green; margin-top: 20px; background: #e2f0d9; padding: 20px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Introduce el código</h2>
+        <input type="text" id="codigoInput" placeholder="xxxx">
+        <br>
+        <button onclick="verificarCodigo()">Confirmar</button>
+
+        <!-- INFORMACIÓN OCULTA -->
+        <div id="informacionOculta" class="exito oculto">
+            <h3>¡Código Correcto!</h3>
+            <p>Bien Hecho</p>
+            <p><strong>Espero que hayas podido comprender un poco más sobre la huella digital gracias a esta actividad. Está claro que es un tema mucho más complicado, pero de forma sencilla, la huella digital es el rastro único de datos que dejas en internet cada vez que navegas. Esto incluye desde los sitios web que visitas y los mensajes que envías, hasta tus publicaciones en redes sociales y las búsquedas que realizas. Prácticamente todo lo que haces en el mundo online se registra, creando un historial permanente que define tu identidad en la red.
+            </strong></p>
+        </div>
+    </div>
+
+    <script>
+        function verificarCodigo() {
+            // Define aquí el código correcto
+            const codigoCorrecto = "4729"; 
+            
+            const codigoUsuario = document.getElementById("codigoInput").value.trim();
+            const infoOculta = document.getElementById("informacionOculta");
+
+            if (codigoUsuario.toLowerCase() === codigoCorrecto.toLowerCase()) {
+                infoOculta.classList.remove("oculto");
+            } else {
+                // Si el código es erróneo, la página se refresca al instante
+                location.reload();
+            }
+        }
+    </script>
+
+</body>
+</html>
